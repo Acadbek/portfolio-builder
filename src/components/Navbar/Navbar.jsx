@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Navbar.module.scss'
 import classNames from 'classnames/bind'
-import { Box, Button, Container } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import { NavLink } from 'react-router-dom'
 import logo from './../../assets/icon/logoIcom.svg'
+import { CurrentButton } from '../Button/Button'
 
 const cn = classNames.bind(styles)
 
-export const Navbar = ({variant }) => {
+export const Navbar = ({variant, className }) => {
   const [isFixed, setIsFixed] = useState(false)
 
   useEffect(() => {
@@ -37,8 +38,8 @@ export const Navbar = ({variant }) => {
             </li>
           </ul>
           <Box className={cn('btnCard')}>
-            <Button variant="outlined" className={cn('btnOne')}>Login</Button>
-            <Button variant="contained" className={cn('btnTwo')}>Start Now</Button>
+            <CurrentButton variant="outlined" className={cn('btnOne')}  title={"Login"}></CurrentButton>
+            <CurrentButton variant="contained" className={cn('btnTwo')} title={"Start Now"}></CurrentButton>
           </Box>
         </Box>
       </Container>
