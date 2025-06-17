@@ -9,6 +9,8 @@ import { PlansPricing } from './pages/PlansPricing';
 import { CreateResume } from './pages/CreateResume';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './layout';
+import { LoginModal } from './components/Login';
+import { Register } from './components/Register';
 
 // import BuilderForm from './components/BuilderForm';
 
@@ -71,6 +73,8 @@ const App = () => {
         <Route path='/about' element={<About />}/>
         <Route path='/planspricing' element={<PlansPricing />}/>
         <Route path='/createresume' element={<CreateResume />}/>
+        <Route path='/login' element={<LoginModal />}/>
+        <Route path='/register' element={<Register />}/>
       </Route>
     </Routes>
     </>
