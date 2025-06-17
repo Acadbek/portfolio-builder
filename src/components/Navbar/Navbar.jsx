@@ -7,7 +7,7 @@ import logo from './../../assets/icon/logoIcom.svg'
 
 const cn = classNames.bind(styles)
 
-export const Navbar = ({ title }) => {
+export const Navbar = ({variant }) => {
   const [isFixed, setIsFixed] = useState(false)
 
   useEffect(() => {
@@ -37,8 +37,8 @@ export const Navbar = ({ title }) => {
             </li>
           </ul>
           <Box className={cn('btnCard')}>
-            <Button variant="contained" color="inherit" className={cn('btnOne')}>Login</Button>
-            <Button variant="contained" color="success" className={cn('btnTwo')}>Start Now</Button>
+            <Button variant="outlined" className={cn('btnOne')}>Login</Button>
+            <Button variant="contained" className={cn('btnTwo')}>Start Now</Button>
           </Box>
         </Box>
       </Container>
