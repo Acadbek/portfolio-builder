@@ -1,0 +1,20 @@
+.BoxThereMain {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+
+    .BoxThereMain__container {
+        .title {
+            font-size: 2rem; // 32px
+            line-height: 2.25rem; // 36px
+            font-weight: 700;
+        }
+        .text {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+            max-width: 700px;
+            text-wrap: balance;
+        }
+    }
+}
