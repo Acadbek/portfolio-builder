@@ -1,9 +1,15 @@
 import { Box, Container, Typography } from '@mui/material'
 import classNames from 'classnames/bind'
 import React from 'react'
-import styleы from './BoxThereMain.module.scss'
+import styles from './BoxThereMain.module.scss'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
-const cn = classNames.bind(styleы)
+
+
+const cn = classNames.bind(styles)
 export const BoxThereMain = () => {
     return (
         <Box className={cn("BoxThereMain")}>
@@ -16,7 +22,101 @@ export const BoxThereMain = () => {
                     you create a professional resume that stands out at any career level.
                 </Typography>
             </Container>
+            <Swiper
+                slidesPerView={1}
+                spaceBetween={10}
+                pagination={{
+                    clickable: true,
+                }}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 50,
+                    },
+                }}
+                modules={[Pagination]}
+                className={cn("mySwiper")}
+            >
+              
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img className={cn("header__right")} src="https://assets.flowcvassets.com/landing/main-landing-hero-1920w.webp" alt="" />
+                </SwiperSlide>
 
+            </Swiper>
         </Box>
     )
 }
