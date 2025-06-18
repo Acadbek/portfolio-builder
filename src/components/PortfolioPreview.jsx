@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   Paper,
   Box,
@@ -12,14 +12,19 @@ import {
   Link,
   Divider,
   CardMedia,
+  IconButton,
 } from '@mui/material';
-import { Email, LinkedIn, GitHub } from '@mui/icons-material';
-
+import { Email, LinkedIn, GitHub, Download } from '@mui/icons-material';
+import { usePortfolioPDF } from '../hooks/useDownload';
 const PortfolioPreview = ({ data }) => {
+  const { downloadPDF } = usePortfolioPDF()
+  const pdfEl = useRef()
+
   return (
-    <Paper elevation={3} sx={{ p: 4, height: '85vh', overflowY: 'auto' }}>
+    <Paper ref={pdfEl} id='portfolio-preview-el' elevation={3} sx={{ p: 4, height: '85vh', overflowY: 'auto' }}>
       <Box
         sx={{
+          position: 'relative',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -27,6 +32,15 @@ const PortfolioPreview = ({ data }) => {
           textAlign: 'center',
         }}
       >
+        <Box sx={{
+          position: 'absolute',
+          top: 0,
+          right: 0
+        }}>
+          <IconButton onClick={() => downloadPDF(data, 'portfolio-preview-el')}>
+            <Download />
+          </IconButton>
+        </Box>
         <Avatar
           alt={data.name}
           src={data.avatarUrl}
