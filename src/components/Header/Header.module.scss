@@ -1,0 +1,125 @@
+.header {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 120px; 
+    position: relative;
+    .header__left {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding-top: 12px;
+
+        .h2 {
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 100%;
+            letter-spacing: 0%;
+        }
+
+        .title {
+            font-weight: 900;
+            font-size: 68px;
+            line-height: 90%;
+            letter-spacing: 0%;
+        }
+        .p {
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 40px;
+            letter-spacing: 0%;
+        }
+        .getBtn {
+            width: 266px;
+            height: 56px;
+            border-radius: 8px;
+            gap: 8px;
+            background: #420550;
+            color: white;
+            svg {
+                background: #420550;
+            }
+        }
+        .boxBottom {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .CardOne {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            top: 68%;
+            left: 48%;
+            position: absolute !important;
+            width: 200px;
+            padding: 10px;
+            background: white !important;
+            border-radius: 24px;
+            &__box {
+                padding: 4px;
+                .name {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 100%;
+                    letter-spacing: 0%;
+                    background: transparent;
+                }
+                .work {
+                    padding-top: 4px;
+                    background: transparent;
+                    margin-top: 2px;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 100%;
+                    color: gray;
+                }
+                .star {
+                    padding-top: 4px;
+                    background: white !important   ;
+                }
+                background: white !important;
+            }
+        }
+        .Cardtwo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            top: 90%;
+            left: 51%;
+            position: absolute !important;
+            width: 370px;
+            padding: 10px;
+            background: white !important;
+            border-radius: 12px;
+            .CardTwo__box {
+                padding: 8px;
+                background: white !important;
+                .titlle {
+                    // padding-top: 6px;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 15px;
+                    letter-spacing: 0%;
+                    background: white !important;
+                }
+                .title_link {
+                    padding-top: 6px;
+                    font-weight: 300;
+                    font-size: 12px;
+                    line-height: 100%;
+                    letter-spacing: 0%;
+                    background: white !important;
+                }
+                .tiktio {
+                    background: white !important;
+                }
+            }
+        }
+    }
+    .header__right {
+        width: 480px;
+        height: 621px;
+        border-radius: 12px;
+    }
+}

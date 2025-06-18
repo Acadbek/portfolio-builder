@@ -1,0 +1,80 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    // width: 100%;
+    transition: all 0.3s ease;
+    z-index: 1000; // qayta yoqing, fixed holatda boshqa elementlar ostida qolmasligi uchun
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        // background-color: white;
+        background: rgb(245, 239, 229);
+
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 0; // fixed holatda margin bo'lmasligi kerak
+    }
+
+    &__container {
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        &_logo {
+            width: 170px;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+
+            ul {
+                display: flex;
+                gap: 50px;
+
+                li {
+                    .link {
+                        color: gray;
+                        font-weight: 500;
+                        font-size: 24px;
+                        line-height: 100%;
+                        text-align: center;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .btnCard {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+
+                .btnOne {
+                    width: 115px;
+                    height: 46px;
+                    border-radius: 10px;
+                    padding: 16px;
+                    border: 1px solid;
+                    color: #420550;
+                    background-color: transparent;
+                }
+
+                .btnTwo {
+                    width: 135px;
+                    height: 46px;
+                    border-radius: 10px;
+                    padding: 16px;
+                    background: #420550;
+                    color: white;
+                    border: none;
+                }
+            }
+        }
+    }
+}
