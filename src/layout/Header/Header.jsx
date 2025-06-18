@@ -2,7 +2,7 @@ import { Avatar, AvatarGroup, Box, Card, Container, Rating, Typography } from '@
 import classNames from 'classnames/bind'
 import React from 'react'
 import styles from './Header.module.scss'
-import { CurrentButton } from '../Button/Button'
+import { CurrentButton } from '../../components/Button/Button'
 import { HerrovIcon } from '../../assets/icon/arrovIcon'
 import { NavLink } from 'react-router-dom'
 import tictok from '../../assets/icon/tictok.svg'
@@ -23,7 +23,9 @@ export const Header = ({ title, starIcon }) => {
         <Typography className={cn("title")} >Build a job-winning <br /> resume for free</Typography>
         <Typography className={cn("p")} >Your first resume is 100% free, including all <br /> design features & unlimited downloads. <br />
           Yes, really 🚀</Typography>
-        <CurrentButton className={cn("getBtn")} starIcon={<HerrovIcon className={cn("heroIcon")} />} title={"Get started – it's free ✨"}></CurrentButton>
+        <NavLink to={'createresume'}>
+          <CurrentButton className={cn("getBtn")} starIcon={<HerrovIcon className={cn("heroIcon")} />} title={"Get started – it's free ✨"}></CurrentButton>
+        </NavLink>
         <Box className={cn("boxBottom")}>
           <AvatarGroup max={4}>
             <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />

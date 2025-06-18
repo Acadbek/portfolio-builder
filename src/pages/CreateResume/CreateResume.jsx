@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Container, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-import BuilderForm from '../../components/BuilderForm';
-import PortfolioPreview from '../../components/PortfolioPreview'
+import BuilderForm from '../../Auth/BuilderForm';
+import PortfolioPreview from '../../Auth/PortfolioPreview'
 
 const theme = createTheme({
   palette: {

@@ -3,9 +3,9 @@ import React from 'react'
 import styles from './BoxTwoMain.module.scss'
 import { Box, Container, Typography } from '@mui/material'
 const cn = classNames.bind(styles)
-import addImgOne from "../../../assets/img/step1.webp";
-import addImgTwo from "../../../assets/img/step2.webp";
-import addImgThere from "../../../assets/img/step3.webp";
+import addImgOne from "../../../../assets/img/step1.webp";
+import addImgTwo from "../../../../assets/img/step2.webp";
+import addImgThere from "../../../../assets/img/step3.webp";
 
 export const BoxTwoMain = () => {
     return (

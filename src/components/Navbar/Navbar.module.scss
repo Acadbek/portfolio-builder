@@ -13,10 +13,8 @@
         left: 0;
         right: 0;
         // background-color: white;
-        background: rgb(245, 239, 229);
-
+        border-radius: 12px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        margin: 0; // fixed holatda margin bo'lmasligi kerak
     }
 
     &__container {
@@ -25,7 +23,7 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        margin-bottom: 24px;
+        margin-bottom: 12px;
 
         &_logo {
             width: 128px;

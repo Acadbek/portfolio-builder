@@ -13,7 +13,7 @@ export const Navbar = ({ variant, className }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 10) {
         setIsFixed(true)
       } else {
         setIsFixed(false)
@@ -21,7 +21,7 @@ export const Navbar = ({ variant, className }) => {
     }
 
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('smooth', handleScroll)
   }, [])
 
   return (
@@ -33,19 +33,25 @@ export const Navbar = ({ variant, className }) => {
             xs: "100%",
           },
         }} className={cn('navbar__container')}>
-        <img src={logo} alt="logo" className={cn('navbar__container_logo')} />
+        <NavLink tabIndex={'/'} to={'/'}>
+          <img src={logo} alt="logo" className={cn('navbar__container_logo')} />
+        </NavLink>
         <Box className={cn('menu')}>
           <ul>
             <li>
-              <NavLink className={cn('link')}>Plans & Pricing</NavLink>
+              <NavLink to={'/PlansPricing'} className={cn('link')}>Plans & Pricing</NavLink>
             </li>
             <li>
-              <NavLink className={cn('link')}>About</NavLink>
+              <NavLink to={"/about"} className={cn('link')}>About</NavLink>
             </li>
           </ul>
           <Box className={cn('btnCard')}>
-            <CurrentButton variant="outlined" className={cn('btnOne')} title={"Login"}></CurrentButton>
-            <CurrentButton variant="contained" className={cn('btnTwo')} title={"Start Now"}></CurrentButton>
+            <NavLink to="/login">
+              <CurrentButton variant="outlined" className={cn('btnOne')} title={"Login"}></CurrentButton>
+            </NavLink>
+            <NavLink to="/register">
+              <CurrentButton variant="contained" className={cn('btnTwo')} title={"Start Now"}></CurrentButton>
+            </NavLink>
           </Box>
         </Box>
       </Container>
