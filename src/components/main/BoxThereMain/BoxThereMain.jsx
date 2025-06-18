@@ -2,10 +2,10 @@ import { Box, Container, Typography } from '@mui/material'
 import classNames from 'classnames/bind'
 import React from 'react'
 import styles from './BoxThereMain.module.scss'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
+// import { Swiper, SwiperSlide } from 'swiper/react'
+// import { Pagination } from 'swiper/modules';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
 import { CurrentButton } from '../../Button/Button'
 
 
