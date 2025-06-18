@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     margin: 20px;
+
     // width: 100%;
     transition: all 0.3s ease;
     z-index: 1000; // qayta yoqing, fixed holatda boshqa elementlar ostida qolmasligi uchun
@@ -24,9 +25,10 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        margin-bottom: 24px;
 
         &_logo {
-            width: 170px;
+            width: 128px;
         }
 
         .menu {
@@ -46,6 +48,9 @@
                         line-height: 100%;
                         text-align: center;
                         text-decoration: none;
+                        &:hover {
+                            opacity: 0.8;
+                        }
                     }
                 }
             }
@@ -56,23 +61,51 @@
                 gap: 24px;
 
                 .btnOne {
-                    width: 115px;
-                    height: 46px;
-                    border-radius: 10px;
-                    padding: 16px;
-                    border: 1px solid;
-                    color: #420550;
+                    display: flex;
+                    height: 40px;
                     background-color: transparent;
+                    width: auto;
+                    padding-left: 14px;
+                    padding-right: 14px;
+                    cursor: pointer;
+                    touch-action: manipulation;
+                    appearance: none;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 0.5rem;
+                    border: 2px solid #374151;
+                    font-size: 0.875rem;
+                    font-weight: 700;
+                    color: #000000;
+                    transition: opacity 0.2s ease;
+                    span {
+                        color: #420550 !important;
+                        background: transparent;
+                    }
                 }
 
                 .btnTwo {
-                    width: 135px;
-                    height: 46px;
-                    border-radius: 10px;
-                    padding: 16px;
-                    background: #420550;
-                    color: white;
+                    display: flex;
+                    height: 40px;
+                    background-color: #420550;
+                    width: auto;
+                    padding-left: 14px;
+                    padding-right: 14px;
+                    cursor: pointer;
+                    touch-action: manipulation;
+                    appearance: none;
+                    align-items: center;
+                    justify-content: center;
                     border: none;
+                    border-radius: 0.5rem;
+                    font-size: 0.875rem;
+                    font-weight: 700;
+                    color: #ffffff;
+                    transition: opacity 0.2s ease;
+                    span {
+                        color: #420550 !important;
+                        background: transparent;
+                    }
                 }
             }
         }

@@ -9,7 +9,13 @@ import addImgThere from "../../../assets/img/step3.webp";
 
 export const BoxTwoMain = () => {
     return (
-        <Container className={cn("BoxTwoMain")}>
+        <Container disableGutters
+        sx={{
+          px: 6,
+          maxWidth: {
+            xs: "100%",
+          },
+        }} className={cn("BoxTwoMain")}>
             <Typography>
                 How FlowCV works
             </Typography>

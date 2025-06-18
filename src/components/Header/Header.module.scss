@@ -2,7 +2,7 @@
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 120px; 
+    margin-bottom: 120px;
     position: relative;
     .header__left {
         display: flex;
@@ -11,10 +11,11 @@
         padding-top: 12px;
 
         .h2 {
-            font-weight: 400;
-            font-size: 30px;
-            line-height: 100%;
-            letter-spacing: 0%;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 24px;
+            color: #374151;
+            letter-spacing: -0.1px;
         }
 
         .title {
@@ -38,6 +39,9 @@
             color: white;
             svg {
                 background: #420550;
+            }
+            span {
+                background: transparent;
             }
         }
         .boxBottom {
