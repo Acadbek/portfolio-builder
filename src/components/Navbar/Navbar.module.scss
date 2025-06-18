@@ -63,6 +63,10 @@
                     border: 1px solid;
                     color: #420550;
                     background-color: transparent;
+                    span {
+                        color: #420550 !important;
+                        background: transparent;
+                    }
                 }
 
                 .btnTwo {
@@ -73,6 +77,10 @@
                     background: #420550;
                     color: white;
                     border: none;
+                    span {
+                        color: #420550 !important;
+                        background: transparent;
+                    }
                 }
             }
         }

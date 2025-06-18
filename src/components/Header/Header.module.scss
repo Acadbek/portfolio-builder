@@ -2,7 +2,7 @@
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 120px; 
+    margin-bottom: 120px;
     position: relative;
     .header__left {
         display: flex;
@@ -38,6 +38,11 @@
             color: white;
             svg {
                 background: #420550;
+            }
+            span {
+                background: transparent;
+                color: #420550 !important;
+             
             }
         }
         .boxBottom {
