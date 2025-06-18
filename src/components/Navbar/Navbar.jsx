@@ -8,7 +8,7 @@ import { CurrentButton } from '../Button/Button'
 
 const cn = classNames.bind(styles)
 
-export const Navbar = ({variant, className }) => {
+export const Navbar = ({ variant, className }) => {
   const [isFixed, setIsFixed] = useState(false)
 
   useEffect(() => {
@@ -26,7 +26,13 @@ export const Navbar = ({variant, className }) => {
 
   return (
     <Box className={cn("navbar", { fixed: isFixed })}>
-      <Container className={cn('navbar__container')}>
+      <Container disableGutters
+        sx={{
+          px: 6,
+          maxWidth: {
+            xs: "100%",
+          },
+        }} className={cn('navbar__container')}>
         <img src={logo} alt="logo" className={cn('navbar__container_logo')} />
         <Box className={cn('menu')}>
           <ul>
@@ -38,7 +44,7 @@ export const Navbar = ({variant, className }) => {
             </li>
           </ul>
           <Box className={cn('btnCard')}>
-            <CurrentButton variant="outlined" className={cn('btnOne')}  title={"Login"}></CurrentButton>
+            <CurrentButton variant="outlined" className={cn('btnOne')} title={"Login"}></CurrentButton>
             <CurrentButton variant="contained" className={cn('btnTwo')} title={"Start Now"}></CurrentButton>
           </Box>
         </Box>

@@ -11,10 +11,11 @@
         padding-top: 12px;
 
         .h2 {
-            font-weight: 400;
-            font-size: 30px;
-            line-height: 100%;
-            letter-spacing: 0%;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 24px;
+            color: #374151;
+            letter-spacing: -0.1px;
         }
 
         .title {
@@ -41,8 +42,6 @@
             }
             span {
                 background: transparent;
-                color: #420550 !important;
-             
             }
         }
         .boxBottom {

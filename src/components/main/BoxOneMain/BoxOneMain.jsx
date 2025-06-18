@@ -9,28 +9,34 @@ import styles from './BoxOneMain.module.scss'
 const cn = classNames.bind(styles)
 export const BoxOneMain = () => {
     return (
-        <Container>
+        <Container disableGutters
+            sx={{
+                px: 6,
+                maxWidth: {
+                    xs: "100%",
+                },
+            }}>
             <Box className={cn('BoxOneMain')}>
 
                 <Box className={cn('giftBox__card')}>
                     <img className={cn('giftBox')} src={giftBox} alt="Gift Box" />
                     <Typography className={cn('text')} variant='p' >
-                        1st resume,
+                        1st resume, 
                         free forever
                     </Typography>
                 </Box>
                 <Box className={cn('giftBox__card')}>
                     <img className={cn('giftBox')} src={qalqonIcon} alt="Gift Box" />
                     <Typography className={cn('text')} variant='p'>
-                        1st resume,
-                        free forever
+                        Privacy & 
+                        GDPR compliant
                     </Typography>
                 </Box>
                 <Box className={cn('giftBox__card')}>
                     <img className={cn('giftBox')} src={paperIcon} alt="Gift Box" />
                     <Typography className={cn('text')} variant='p'>
-                        1st resume,
-                        free forever
+                        Professionally 
+                        designed templates
                     </Typography>
                 </Box>
 
