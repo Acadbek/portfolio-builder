@@ -1,7 +1,7 @@
 import React from 'react';
-// import { Grid, Container, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-// import BuilderForm from './components/BuilderForm';
-// import PortfolioPreview from './components/PortfolioPreview'
+import { Grid, Container, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import BuilderForm from './components/BuilderForm';
+import PortfolioPreview from './components/PortfolioPreview'
 
 import { About } from './pages/About';
 import { HomePage } from './pages/Home';
