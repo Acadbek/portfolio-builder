@@ -1,0 +1,113 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+
+    // width: 100%;
+    transition: all 0.3s ease;
+    z-index: 1000; // qayta yoqing, fixed holatda boshqa elementlar ostida qolmasligi uchun
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        // background-color: white;
+        background: rgb(245, 239, 229);
+
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 0; // fixed holatda margin bo'lmasligi kerak
+    }
+
+    &__container {
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 24px;
+
+        &_logo {
+            width: 128px;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+
+            ul {
+                display: flex;
+                gap: 50px;
+
+                li {
+                    .link {
+                        color: gray;
+                        font-weight: 500;
+                        font-size: 24px;
+                        line-height: 100%;
+                        text-align: center;
+                        text-decoration: none;
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+
+            .btnCard {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+
+                .btnOne {
+                    display: flex;
+                    height: 40px;
+                    background-color: transparent;
+                    width: auto;
+                    padding-left: 14px;
+                    padding-right: 14px;
+                    cursor: pointer;
+                    touch-action: manipulation;
+                    appearance: none;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 0.5rem;
+                    border: 2px solid #374151;
+                    font-size: 0.875rem;
+                    font-weight: 700;
+                    color: #000000;
+                    transition: opacity 0.2s ease;
+                    span {
+                        color: #420550 !important;
+                        background: transparent;
+                    }
+                }
+
+                .btnTwo {
+                    display: flex;
+                    height: 40px;
+                    background-color: #420550;
+                    width: auto;
+                    padding-left: 14px;
+                    padding-right: 14px;
+                    cursor: pointer;
+                    touch-action: manipulation;
+                    appearance: none;
+                    align-items: center;
+                    justify-content: center;
+                    border: none;
+                    border-radius: 0.5rem;
+                    font-size: 0.875rem;
+                    font-weight: 700;
+                    color: #ffffff;
+                    transition: opacity 0.2s ease;
+                    span {
+                        color: #420550 !important;
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
+}

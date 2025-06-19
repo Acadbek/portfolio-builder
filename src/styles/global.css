@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Dm Sans";
+}
+
+body {
+    background: #dfdedb;
+}
+
+.sections{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding-bottom: 40px;
+}
+.sections2{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+.sections3{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding-bottom: 16px;
+    padding-top: 25px;
+}
+.table-title{
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+.columnTable{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    margin-top: 1.5rem;
+    gap: .5rem;
+}
+.horizontal-line{
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+.checkMark-Popper{
+    display: flex;
+    gap: 8px;
+}
+.Price{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+.Price h3{
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 1;
+    padding-bottom: 8px;
+    padding-left: 24px;
+}
+.Price div{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.Price h4{
+    font-weight: 700;
+    line-height: 1;
+    font-size: 1.25rem;
+    padding-top: 15px;
+}
+.Price p {
+    padding-left: 24px;
+}

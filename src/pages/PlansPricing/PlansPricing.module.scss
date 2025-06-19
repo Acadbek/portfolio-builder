@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 .plansPricing-top{
+    padding-top: 50px;
     h1{
         position: absolute;
         z-index: 0;
@@ -12,6 +13,11 @@
         line-height: 1; 
         color: rgb(32 14 50 / var(--tw-text-opacity));
         padding-top: 20px;
+    }
+    span{
+        position: absolute;
+        margin-right: 230px;
+        top: 150px;
     }
     &__title{
         display: flex;
