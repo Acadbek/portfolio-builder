@@ -1,7 +1,7 @@
 import React from 'react';
-import { Grid, Container, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-import BuilderForm from './components/BuilderForm';
-import PortfolioPreview from './components/PortfolioPreview'
+// import { Grid, Container, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+// import BuilderForm from './components/BuilderForm';
+// import PortfolioPreview from './components/PortfolioPreview'
 
 import { About } from './pages/About';
 import { HomePage } from './pages/Home';
@@ -11,6 +11,8 @@ import { Route, Routes } from 'react-router-dom';
 import { Layout } from './layout';
 import ResumeTemplates from './pages/ResumeTemplates';
 import TemplateDetails from './pages/TemplateDetails';
+import { ResumeContentNav } from './pages/ReumeContentNav/ResumeContentNav';
+import { DashLayout } from './layout/DashLayout/DashLayout';
 
 // import BuilderForm from './components/BuilderForm';
 
@@ -22,7 +24,7 @@ import TemplateDetails from './pages/TemplateDetails';
 
 
 const App = () => {
-  
+
   // const [portfolioData, setPortfolioData] = React.useState({
   //   name: 'Ismingiz',
   //   title: 'Kasbingiz (masalan, Frontend Dasturchi)',
@@ -52,7 +54,7 @@ const App = () => {
 
   return (
     <>
-    {/* <ThemeProvider theme={theme}>
+      {/* <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
         <Grid container spacing={4} wrap="nowrap">
@@ -67,16 +69,25 @@ const App = () => {
       </Container>
     </ThemeProvider> */}
 
-    <Routes>
-      <Route element={<Layout/>}>
-        <Route path='/' element={<HomePage />}/>
-        <Route path='/about' element={<About />}/>
-        <Route path='/planspricing' element={<PlansPricing />}/>
-        <Route path='/createresume' element={<CreateResume />}/>
-        <Route path='/resume-templates' element={<ResumeTemplates />}/>
-        <Route path='/template-details/:id' element={<TemplateDetails />}/>
-      </Route>
-    </Routes>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/planspricing' element={<PlansPricing />} />
+          <Route path='/createresume' element={<CreateResume />} />
+          <Route path='/resume-templates' element={<ResumeTemplates />} />
+          <Route path='/template-details/:id' element={<TemplateDetails />} />
+        </Route>
+
+
+        <Route path='/resumecontent' element={<ResumeContentNav />} />
+        
+        {/* 
+        <Route element={<DashLayout />}>
+         </Route> */}
+        {/* <Route path="/login" element={<Login />} /> */}
+        {/* <Route path="/register" element={<Register />} /> */}
+      </Routes>
     </>
   )
 }
