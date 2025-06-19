@@ -10,12 +10,12 @@ const cn = classNames.bind(styles)
 export const BoxOneMain = () => {
     return (
         <Container disableGutters
-            sx={{
-                px: 6,
-                maxWidth: {
-                    xs: "100%",
-                },
-            }}>
+        maxWidth="xl"
+        sx={{
+          px: 6,
+          mx: 'auto', // markazga chiqarish
+        }
+        } >
             <Box className={cn('BoxOneMain')}>
 
                 <Box className={cn('giftBox__card')}>

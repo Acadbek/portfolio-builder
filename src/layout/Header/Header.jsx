@@ -11,12 +11,12 @@ const cn = classNames.bind(styles)
 export const Header = ({ title, starIcon }) => {
   return (
     <Container disableGutters
-      sx={{
-        px: 6,
-        maxWidth: {
-          xs: "100%",
-        },
-      }} className={cn("header")}>
+    maxWidth="xl"
+    sx={{
+      px: 6,
+      mx: 'auto', // markazga chiqarish
+    }
+    }  className={cn("header")}>
 
       <Box className={cn("header__left")}>
         <Typography className={cn("h2")} >Free Online Resume Builder</Typography>

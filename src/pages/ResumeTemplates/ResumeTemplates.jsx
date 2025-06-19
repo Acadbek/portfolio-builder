@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import TemplateCard from "../../components/TemplateCard/TemplateCard";
+// import TemplateCard from "../../components/TemplateCard/TemplateCard";
 import FilterButton from "../../components/FilterButton/FilterButton";
 import { useNavigate } from "react-router-dom";
 import styles from "./ResumeTemplates.module.scss";
+import TemplateCard from "./TemplateCard";
 
 const templates = [
   {

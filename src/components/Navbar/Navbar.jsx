@@ -27,12 +27,12 @@ export const Navbar = ({ variant, className }) => {
   return (
     <Box className={cn("navbar", { fixed: isFixed })}>
       <Container disableGutters
+        maxWidth="xl"
         sx={{
           px: 6,
-          maxWidth: {
-            xs: "100%",
-          },
-        }} className={cn('navbar__container')}>
+          mx: 'auto', // markazga chiqarish
+        }
+        } className={cn('navbar__container')}>
         <NavLink tabIndex={'/'} to={'/'}>
           <img src={logo} alt="logo" className={cn('navbar__container_logo')} />
         </NavLink>
@@ -55,6 +55,6 @@ export const Navbar = ({ variant, className }) => {
           </Box>
         </Box>
       </Container>
-    </Box>
+    </Box >
   )
 }
