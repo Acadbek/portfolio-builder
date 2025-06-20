@@ -14,6 +14,8 @@ import SimplePopper from './Popper';
 import { LockIcon } from '../../../assets/icon/LockIcon';
 import ButtonBase from './Button';
 import ButtonBase2 from './Button2';
+import './index.css';
+
 
 export default function UnstyledTabsIntroduction() {
   return (
