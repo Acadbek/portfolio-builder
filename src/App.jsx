@@ -56,13 +56,13 @@ const App = () => {
   //   },
   // })
 
-  const PrivateRouter = ({children}) => {
-  const {authenticated, loading} = React.useContext(AuthContext)
-  if (loading) {
-    return <div>Loading</div>
+  const PrivateRouter = ({ children }) => {
+    const { authenticated, loading } = React.useContext(AuthContext)
+    if (loading) {
+      return <div>Loading</div>
+    }
+    return authenticated ? children : <Navigate to="/login" replace />
   }
-  return authenticated ? children : <Navigate to="/login" replace/>
-}
 
   return (
     <>
@@ -80,33 +80,31 @@ const App = () => {
         </Grid>
       </Container>
     </ThemeProvider> */}
-    <AuthProvider>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/planspricing' element={<PlansPricing />} />
-          <Route path='/login' element={<LoginModal />} />
-          <Route path='/register' element={<Register />} />
-        </Route>
-        <Route element={<PrivateRouter><AuthLayout /></PrivateRouter>}>
-          <Route path='/createresume' element={<CreateResume />} />
-          <Route path='/resume-templates' element={<ResumeTemplates />} />
-          <Route path='/template-details/:id' element={<TemplateDetails />} />
-          <Route path='/login' element={<LoginModal />} />
-          <Route path='/register' element={<Register />} />
-        </Route>
+      <AuthProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/planspricing' element={<PlansPricing />} />
+            <Route path='/login' element={<LoginModal />} />
+            <Route path='/register' element={<Register />} />
+          </Route>
+          <Route element={<PrivateRouter><AuthLayout /></PrivateRouter>}>
+            <Route path='/createresume' element={<CreateResume />} />
+            <Route path='/resume-templates' element={<ResumeTemplates />} />
+            <Route path='/template-details/:id' element={<TemplateDetails />} />
+            <Route path='/login' element={<LoginModal />} />
+            <Route path='/register' element={<Register />} />
+          </Route>
+          <Route path='/resumecontent' element={<ResumeContentNav />} />
 
-
-        <Route path='/resumecontent' element={<ResumeContentNav />} />
-        
-        {/* 
+          {/* 
         <Route element={<DashLayout />}>
          </Route> */}
-        {/* <Route path="/login" element={<Login />} /> */}
-        {/* <Route path="/register" element={<Register />} /> */}
-      </Routes>
-    </AuthProvider>
+          {/* <Route path="/login" element={<Login />} /> */}
+          {/* <Route path="/register" element={<Register />} /> */}
+        </Routes>
+      </AuthProvider>
     </>
   )
 }
