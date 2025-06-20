@@ -6,7 +6,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { CurrentButton } from '../../Button/Button'
+import { CurrentButton } from '../../../../components/Button/Button'
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -124,7 +125,9 @@ export const BoxThereMain = ({ variant, title }) => {
                 </SwiperSlide>
 
             </Swiper>
-            <CurrentButton className={cn("btn")} title={"Show all Templates"}></CurrentButton>
+            <NavLink to={"/resume-templates"} className={cn("link")}>
+                <CurrentButton className={cn("btn")} title={"Show all Templates"}></CurrentButton>
+            </NavLink>
 
         </Box>
     )

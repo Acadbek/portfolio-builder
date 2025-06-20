@@ -1,0 +1,91 @@
+.resumeContentNavBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .resumeContentNav {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        width: 94%;
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+        background: #fff;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .leftBox {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            height: 100%;
+            padding-left: 20px;
+
+            .leftBox__link {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+            }
+        }
+        .ContentLink {
+            color: gray;
+            &:focus {
+                background-image: linear-gradient(90deg, rgb(236, 0, 140), rgb(252, 103, 103));
+                background-clip: text;
+                -webkit-background-clip: text; /* Safari uchun qo‘shimcha */
+                color: transparent;
+            }
+        }
+
+        .rightBox {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            .currentButton {
+                color: rgb(98, 96, 96);
+                display: flex;
+                height: 2.5rem; /* h-10 */
+                min-width: 160px;
+                max-width: 200px;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem; /* gap-4 */
+                border-radius: 0.5rem; /* rounded-lg */
+                border: 1px solid #e5e7eb; /* border-gray-200 */
+                background-color: #f3f4f6; /* bg-gray-100 */
+                padding-top: 0.5rem; /* py-2 */
+                padding-bottom: 0.5rem;
+                padding-left: 1rem; /* pl-4 */
+                padding-right: 0.5rem; /* pr-2 */
+                font-weight: 600; /* font-semibold */
+                transition: background-color 0.2s ease-in-out;
+                outline: none;
+            }
+            .currentButton2 {
+                display: flex;
+                height: 40px;
+                background-color: #420550;
+                width: auto;
+                padding-left: 14px;
+                padding-right: 14px;
+                cursor: pointer;
+                touch-action: manipulation;
+                appearance: none;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                border-radius: 0.5rem;
+                font-size: 0.875rem;
+                font-weight: 700;
+                color: #ffffff;
+                transition: opacity 0.2s ease;
+            }
+        }
+    }
+}
