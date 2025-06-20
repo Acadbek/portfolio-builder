@@ -12,6 +12,7 @@ const theme = createTheme({
 
 export const CreateResume = () => {
   const [textColor, setTextColor] = React.useState('#333333'); // default text rangi
+  const [iconState, setIconState] = React.useState('none'); // default text rangi
   const [portfolioData, setPortfolioData] = React.useState({
     name: 'Ismingiz',
     title: 'Kasbingiz (masalan, Frontend Dasturchi)',
@@ -48,12 +49,15 @@ export const CreateResume = () => {
             <CustomizePortfolio
               onColorChange={setTextColor}
               selectedColor={textColor}
+              onIconStateChange={setIconState}
+              selectedIconState={iconState}
             />
+            {iconState}
             <BuilderForm data={portfolioData} setData={setPortfolioData} />
           </Grid>
 
           <Grid item xs={12} md={7}>
-            <PortfolioPreview data={portfolioData} textColor={textColor} />
+            <PortfolioPreview data={portfolioData} textColor={textColor} iconState={iconState} />
           </Grid>
         </Grid>
       </Container>

@@ -13,13 +13,25 @@ import {
   Divider,
   CardMedia,
 } from '@mui/material';
-import { Email, LinkedIn, GitHub, Download } from '@mui/icons-material';
+import { Email, LinkedIn, GitHub, Download, AccountCircle, Addchart, ContactEmergency, AccountBalance, AddAPhoto, ContactEmergencyOutlined } from '@mui/icons-material';
 import { usePortfolioPDF } from '../hooks/useDownload';
 
-const PortfolioPreview = ({ data, textColor }) => {
+const PortfolioPreview = ({ data, textColor, iconState }) => {
   const { downloadPDF } = usePortfolioPDF()
+
+  const icon = () => {
+    if (iconState === 'none') {
+      return 'none'
+    } else if (iconState === 'outline') {
+      return 'outline'
+    } else {
+      return 'filled'
+    }
+  }
+
   return (
     <Paper elevation={3} sx={{ p: 4, height: '85vh', overflowY: 'auto', position: 'relative', color: textColor }}>
+      {iconState}
       <Button
         sx={{
           position: 'absolute',
@@ -53,7 +65,10 @@ const PortfolioPreview = ({ data, textColor }) => {
         </Box>
 
         <Box sx={{ mb: 4 }}>
-          <Typography variant="h5" gutterBottom>
+          <Typography sx={{ display: 'flex', alignItems: 'center', gap: 1 }} variant="h5" gutterBottom>
+            {icon() === 'none' && ''}
+            {icon() === 'outline' && <AccountCircle />}
+            {icon() === 'filled' && <AccountBalance />}
             Men haqimda
           </Typography>
           <Divider />
@@ -63,7 +78,10 @@ const PortfolioPreview = ({ data, textColor }) => {
         </Box>
 
         <Box sx={{ mb: 4 }}>
-          <Typography variant="h5" gutterBottom>
+          <Typography sx={{ display: 'flex', alignItems: 'center', gap: 1 }} variant="h5" gutterBottom>
+            {icon() === 'none' && ''}
+            {icon() === 'outline' && <Addchart />}
+            {icon() === 'filled' && <AddAPhoto />}
             Ko'nikmalarim
           </Typography>
           <Divider />
@@ -117,8 +135,10 @@ const PortfolioPreview = ({ data, textColor }) => {
           ))}
         </Box>
         <Box sx={{ textAlign: 'center' }}>
-          <Typography variant="h5" gutterBottom>
-            Bog'lanish
+          <Typography sx={{ display: 'flex', alignItems: 'center', gap: 1, justifyContent: 'center' }} variant="h5" gutterBottom>
+            {icon() === 'none' && ''}
+            {icon() === 'outline' && <ContactEmergencyOutlined />}
+            {icon() === 'filled' && <ContactEmergency />} Bog'lanish
           </Typography>
           <Divider />
           <Box sx={{ mt: 2 }}>

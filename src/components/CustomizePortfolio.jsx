@@ -1,10 +1,18 @@
 import { Box, Stack, Typography, Button } from "@mui/material";
+import React from "react";
 
 const colors = ['#333333', '#ff0000', '#007bff', '#00c853', '#6a1b9a'];
 
-const CustomizePortfolio = ({ onColorChange, selectedColor }) => {
+const CustomizePortfolio = ({ onColorChange, selectedColor, onIconStateChange, selectedIconState }) => {
+  const [activeIconButton, setActiveIconButton] = React.useState(1)
+
+  const handleIconState = (id) => {
+    onIconStateChange(id)
+    setActiveIconButton(id)
+  }
+
   return (
-    <Box>
+    <Box sx={{ py: 5 }}>
       <Typography variant="h6" gutterBottom>
         Matn rangini tanlang:
       </Typography>
@@ -26,6 +34,22 @@ const CustomizePortfolio = ({ onColorChange, selectedColor }) => {
             }}
           />
         ))}
+      </Stack>
+
+      <Typography sx={{ mt: 5 }} variant="h6" gutterBottom>
+        Ikonkalar
+      </Typography>
+
+      <Stack direction="row" spacing={2}>
+        <Button
+          onClick={() => handleIconState('none')}
+          variant={activeIconButton === 'none' ? 'contained' : 'outlined'}>None</Button>
+        <Button
+          onClick={() => handleIconState('outline')}
+          variant={activeIconButton === 'outline' ? 'contained' : 'outlined'}>Outline</Button>
+        <Button
+          onClick={() => handleIconState('filled')}
+          variant={activeIconButton === 'filled' ? 'contained' : 'outlined'}>Filled</Button>
       </Stack>
     </Box>
   )
