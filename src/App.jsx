@@ -64,6 +64,9 @@ const App = () => {
     return authenticated ? children : <Navigate to="/login" replace />
   }
 
+  console.log(import.meta.env.VITE_BASE_URL);
+
+
   return (
     <>
       {/* <ThemeProvider theme={theme}>
