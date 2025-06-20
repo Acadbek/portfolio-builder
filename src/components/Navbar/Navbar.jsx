@@ -5,6 +5,7 @@ import { Box, Container } from '@mui/material'
 import { NavLink } from 'react-router-dom'
 import logo from './../../assets/icon/logoIcom.svg'
 import { CurrentButton } from '../Button/Button'
+import { AuthContext } from '../../context/AuthContext'
 
 const cn = classNames.bind(styles)
 
@@ -24,6 +25,9 @@ export const Navbar = ({ variant, className }) => {
     return () => window.removeEventListener('smooth', handleScroll)
   }, [])
 
+  // Auntifikatsiyani tekshirish token bosa login btn , start now btn ozgaradi
+  const {authenticated} = React.useContext(AuthContext)
+  
   return (
     <Box className={cn("navbar", { fixed: isFixed })}>
       <Container disableGutters
@@ -46,10 +50,10 @@ export const Navbar = ({ variant, className }) => {
             </li>
           </ul>
           <Box className={cn('btnCard')}>
-            <NavLink to="/login">
+            <NavLink to={!authenticated ? "/login" : "/"}>
               <CurrentButton variant="outlined" className={cn('btnOne')} title={"Login"}></CurrentButton>
             </NavLink>
-            <NavLink to="/register">
+            <NavLink to={!authenticated ? "/register" : "/createresume"}>
               <CurrentButton variant="contained" className={cn('btnTwo')} title={"Start Now"}></CurrentButton>
             </NavLink>
           </Box>

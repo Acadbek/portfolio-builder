@@ -7,12 +7,16 @@ import { About } from './pages/About';
 import { HomePage } from './pages/Home';
 import { PlansPricing } from './pages/PlansPricing';
 import { CreateResume } from './pages/CreateResume';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './layout';
 import ResumeTemplates from './pages/ResumeTemplates';
 import TemplateDetails from './pages/TemplateDetails';
 import { ResumeContentNav } from './pages/ReumeContentNav/ResumeContentNav';
 import { DashLayout } from './layout/DashLayout/DashLayout';
+import { LoginModal } from './components/Login';
+import { Register } from './components/Register';
+import AuthProvider, { AuthContext } from './context/AuthContext';
+import { AuthLayout } from './layout/Authlayout';
 
 // import BuilderForm from './components/BuilderForm';
 
@@ -52,6 +56,14 @@ const App = () => {
   //   },
   // })
 
+  const PrivateRouter = ({children}) => {
+  const {authenticated, loading} = React.useContext(AuthContext)
+  if (loading) {
+    return <div>Loading</div>
+  }
+  return authenticated ? children : <Navigate to="/login" replace/>
+}
+
   return (
     <>
       {/* <ThemeProvider theme={theme}>
@@ -68,15 +80,21 @@ const App = () => {
         </Grid>
       </Container>
     </ThemeProvider> */}
-
+    <AuthProvider>
       <Routes>
         <Route element={<Layout />}>
           <Route path='/' element={<HomePage />} />
           <Route path='/about' element={<About />} />
           <Route path='/planspricing' element={<PlansPricing />} />
+          <Route path='/login' element={<LoginModal />} />
+          <Route path='/register' element={<Register />} />
+        </Route>
+        <Route element={<PrivateRouter><AuthLayout /></PrivateRouter>}>
           <Route path='/createresume' element={<CreateResume />} />
           <Route path='/resume-templates' element={<ResumeTemplates />} />
           <Route path='/template-details/:id' element={<TemplateDetails />} />
+          <Route path='/login' element={<LoginModal />} />
+          <Route path='/register' element={<Register />} />
         </Route>
 
 
@@ -88,6 +106,7 @@ const App = () => {
         {/* <Route path="/login" element={<Login />} /> */}
         {/* <Route path="/register" element={<Register />} /> */}
       </Routes>
+    </AuthProvider>
     </>
   )
 }
