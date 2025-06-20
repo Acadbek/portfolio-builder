@@ -100,6 +100,7 @@ const images = [
   },
 ];
 
+
 const ChooseTemp = () => {
   const [showAllModal, setShowAllModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);

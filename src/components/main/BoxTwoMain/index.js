@@ -1,1 +1,0 @@
-export { BoxTwoMain } from './BoxTwoMain'
