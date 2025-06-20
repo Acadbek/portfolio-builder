@@ -1,0 +1,28 @@
+.choose {
+    width: 656px !important;
+    height: 516px !important;
+    background-color: white !important;
+    border-radius: 20px !important;
+    padding: 36px !important;
+    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow) !important;
+
+    &__title {
+        font-size: 24px !important;
+        font-weight: 800;
+    }
+
+    &__desc {
+        font-size: 15px ;
+        color: #6b7280;
+        margin-top: 5px;
+    }
+
+    &__btn {
+        margin-top: 20px !important;
+        color: black !important;
+    }
+}
+
+.modal {
+    display: flex !important;
+}
