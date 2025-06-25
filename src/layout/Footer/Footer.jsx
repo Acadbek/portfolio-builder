@@ -49,7 +49,7 @@ const Footer = () => {
                 <FaTwitter cursor={"pointer"} color="white" size={20} />
                 <FaRedditAlien cursor={"pointer"} color="white" size={20} />
               </Box>
-            </Box>
+            </Box> 
             <Typography className={cn("footer__last")}>
               © 2025 Uniqkorn Creative GmbH
             </Typography>
