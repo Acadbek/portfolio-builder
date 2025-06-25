@@ -1,7 +1,13 @@
+import { Box } from '@mui/material'
 import React from 'react'
+import { Header } from '../../layout/Header/Header'
+import { Main } from './components/Main'
 
 export const HomePage = () => {
   return (
-    <div>Home</div>
+    <Box>
+      <Header/>
+      <Main />
+    </Box>
   )
 }

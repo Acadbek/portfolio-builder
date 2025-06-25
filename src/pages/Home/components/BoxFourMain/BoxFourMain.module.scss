@@ -1,0 +1,52 @@
+.Main {
+  margin-top: 150px;
+
+  .main__text {
+    font-weight: 600;
+    font-size: 48px;
+    margin-top: 30px;
+  }
+  .text__main {
+    margin-top: 1.25rem;
+    max-width: 800px;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: rgb(97 105 119);
+  }
+}
+.main__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+  margin-top: 80px;
+  .card {
+    // border: 1px solid black;
+     .title{
+       font-size: 1.25rem;     
+    font-weight: 700;         
+    color: #200E32;   
+    margin-top: 1rem;           
+    }
+    .description{
+      color: #6B7280;           /* assuming gray-530 is around this (custom tone) */
+    margin-top: 0.5rem;       /* lg:mt-2 = 0.5rem */
+    max-width: 420px;         
+    }
+  }
+  .icon__wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #200E32; 
+    width: 2.5rem; 
+    height: 2.5rem;
+    border-radius: 0.375rem; 
+   
+    .home__icon {
+      width: 32px;
+      height: 32px;
+      color: white;
+    }
+    
+  }
+}
