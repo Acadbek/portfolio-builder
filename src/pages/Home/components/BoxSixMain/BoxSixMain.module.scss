@@ -1,0 +1,35 @@
+.main__acardion {
+  max-width: 906px;
+  margin: 0 auto;
+  margin-top: 100px;
+  .main__cover {
+    border-bottom: 2px solid #f9fafb;
+  }
+  .description {
+    cursor: default;
+    padding-bottom: 2rem;
+    font-size: 1rem;
+    color: #4b5563;
+  }
+  .heading__main {
+    margin-bottom: 40px;
+    font-size: 48px;
+    font-weight: 600;
+    color: #200e32;
+  }
+  .acar__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-top: 2px solid #f9fafb;
+    cursor: pointer;
+
+    .title__acardion {
+      color: #200e32;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: opacity 0.2s ease;
+    }
+  }
+}

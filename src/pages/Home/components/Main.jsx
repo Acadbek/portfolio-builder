@@ -3,6 +3,9 @@ import React from 'react'
 import { BoxOneMain } from './BoxOneMain/BoxOneMain'
 import { BoxTwoMain } from './BoxTwoMain/BoxTwoMain'
 import { BoxThereMain } from './BoxThereMain'
+import { BoxFourMain } from './BoxFourMain'
+import { BoxFiveMain } from './BoxFiveMain'
+import { BoxSixMain } from './BoxSixMain'
 
 export const Main = () => {
     return (
@@ -10,6 +13,9 @@ export const Main = () => {
             <BoxOneMain />
             <BoxTwoMain />
             <BoxThereMain />
+            <BoxFourMain/>
+            <BoxFiveMain/>
+            <BoxSixMain/>
         </Box>
     )
 }
