@@ -1,12 +1,12 @@
 import { Box } from '@mui/material'
 import React from 'react'
-import { Header } from '../../components/Header/Header'
-import { Main } from '../../components/main/Main'
+import { Header } from '../../layout/Header/Header'
+import { Main } from './components/Main'
 
 export const HomePage = () => {
   return (
     <Box>
-      <Header />
+      <Header/>
       <Main />
     </Box>
   )

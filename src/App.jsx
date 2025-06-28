@@ -1,16 +1,22 @@
 import React from 'react';
-import { Grid, Container, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-import BuilderForm from './components/BuilderForm';
-import PortfolioPreview from './components/PortfolioPreview'
+// import { Grid, Container, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+// import BuilderForm from './components/BuilderForm';
+// import PortfolioPreview from './components/PortfolioPreview'
 
 import { About } from './pages/About';
 import { HomePage } from './pages/Home';
 import { PlansPricing } from './pages/PlansPricing';
 import { CreateResume } from './pages/CreateResume';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './layout';
 import ResumeTemplates from './pages/ResumeTemplates';
 import TemplateDetails from './pages/TemplateDetails';
+import { ResumeContentNav } from './pages/ReumeContentNav/ResumeContentNav';
+import { DashLayout } from './layout/DashLayout/DashLayout';
+import { LoginModal } from './components/Login';
+import { Register } from './components/Register';
+import AuthProvider, { AuthContext } from './context/AuthContext';
+import { AuthLayout } from './layout/Authlayout';
 
 // import BuilderForm from './components/BuilderForm';
 
@@ -22,7 +28,7 @@ import TemplateDetails from './pages/TemplateDetails';
 
 
 const App = () => {
-  
+
   // const [portfolioData, setPortfolioData] = React.useState({
   //   name: 'Ismingiz',
   //   title: 'Kasbingiz (masalan, Frontend Dasturchi)',
@@ -50,9 +56,20 @@ const App = () => {
   //   },
   // })
 
+  const PrivateRouter = ({ children }) => {
+    const { authenticated, loading } = React.useContext(AuthContext)
+    if (loading) {
+      return <div>Loading</div>
+    }
+    return authenticated ? children : <Navigate to="/login" replace />
+  }
+
+  console.log(import.meta.env.VITE_BASE_URL);
+
+
   return (
     <>
-    {/* <ThemeProvider theme={theme}>
+      {/* <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
         <Grid container spacing={4} wrap="nowrap">
@@ -66,17 +83,31 @@ const App = () => {
         </Grid>
       </Container>
     </ThemeProvider> */}
+      <AuthProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/planspricing' element={<PlansPricing />} />
+            <Route path='/login' element={<LoginModal />} />
+            <Route path='/register' element={<Register />} />
+          </Route>
+          <Route element={<PrivateRouter><AuthLayout /></PrivateRouter>}>
+            <Route path='/createresume' element={<CreateResume />} />
+            <Route path='/resume-templates' element={<ResumeTemplates />} />
+            <Route path='/template-details/:id' element={<TemplateDetails />} />
+            <Route path='/login' element={<LoginModal />} />
+            <Route path='/register' element={<Register />} />
+          </Route>
+          <Route path='/resumecontent' element={<ResumeContentNav />} />
 
-    <Routes>
-      <Route element={<Layout/>}>
-        <Route path='/' element={<HomePage />}/>
-        <Route path='/about' element={<About />}/>
-        <Route path='/planspricing' element={<PlansPricing />}/>
-        <Route path='/createresume' element={<CreateResume />}/>
-        <Route path='/resume-templates' element={<ResumeTemplates />}/>
-        <Route path='/template-details/:id' element={<TemplateDetails />}/>
-      </Route>
-    </Routes>
+          {/* 
+        <Route element={<DashLayout />}>
+         </Route> */}
+          {/* <Route path="/login" element={<Login />} /> */}
+          {/* <Route path="/register" element={<Register />} /> */}
+        </Routes>
+      </AuthProvider>
     </>
   )
 }

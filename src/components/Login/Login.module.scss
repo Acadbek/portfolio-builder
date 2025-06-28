@@ -1,0 +1,69 @@
+.login {
+   position: fixed;
+   top: 0;
+   left: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100vh;
+
+   &__close {
+      position: absolute;
+      z-index: 89;
+      width: 100%;
+      height: 100vh;
+      background: #000;
+      opacity: .6;
+   }
+
+   &__box {
+      position: relative;
+      z-index: 90;
+      border-radius: 20px !important;
+      background: #f9fafb;
+
+      &__form {
+         display: flex;
+         flex-direction: column;
+         gap: 12px;
+         width: 420px;
+         padding: 64px;
+      }
+
+      &__title {
+         text-align: center;
+         font-family: DM Sans !important;
+         font-weight: 900 !important;
+         margin-bottom: 28px !important;
+      }
+
+      &__link {
+         margin-top: 28px;
+         text-align: center;
+         font-family: DM Sans !important;
+         text-decoration: none;
+         color: #424242;
+
+         span:last-child {
+            font-weight: 700;
+         }
+
+         &:hover {
+            opacity: .8;
+         }
+      }
+
+      &__button {
+         text-align: center;
+         height: 48px;
+         margin-top: 20px !important;
+         background: #200e32 !important;
+         border-radius: 12px !important;
+         text-transform: capitalize !important;
+         font-family: DM Sans !important;
+         font-size: 16px !important;
+         font-weight: 700 !important;
+      }
+   }
+}

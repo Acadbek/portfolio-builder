@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, NavLink } from "react-router-dom";
 import styles from "./TemplateDetails.module.scss";
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import XIcon from '@mui/icons-material/X';
@@ -85,9 +85,9 @@ const TemplateDetails = () => {
           {template.details &&
             template.details.map((item, i) => <li key={i}>{item}</li>)}
         </ul>
-        <button className={styles.button}>
-          Use this template
-        </button>
+
+        <NavLink to={"/resumecontent"}> <button className={styles.button}> Use this template     </button></NavLink>
+
         <div style={{ marginTop: 32 }}>
           <b className={styles.shareTitle}>Share this template with your friends</b>
           <div className={styles.icons}>
