@@ -4,6 +4,7 @@ import classnames from 'classnames/bind'
 import styles from './PlansPricing.module.scss'
 import UnstyledTabsIntroduction from './components/Tabs'
 import { SaveMoney } from '../../assets/icon/SaveMoney'
+import { BoxSixMain } from '../Home/components/BoxSixMain'
 const cn = classnames.bind(styles)
 
 export const PlansPricing = () => {
@@ -15,6 +16,7 @@ export const PlansPricing = () => {
           <span><SaveMoney /></span>
           <UnstyledTabsIntroduction />
         </Box> 
+        <BoxSixMain />
       </Container>
     </Box>
   )
