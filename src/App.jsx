@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { Grid, Container, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 // import BuilderForm from './components/BuilderForm';
 // import PortfolioPreview from './components/PortfolioPreview'
@@ -17,6 +17,7 @@ import { LoginModal } from './components/Login';
 import { Register } from './components/Register';
 import AuthProvider, { AuthContext } from './context/AuthContext';
 import { AuthLayout } from './layout/Authlayout';
+import { Box, Typography } from '@mui/material';
 
 // import BuilderForm from './components/BuilderForm';
 
@@ -57,12 +58,41 @@ const App = () => {
   // })
 
   const PrivateRouter = ({ children }) => {
-    const { authenticated, loading } = React.useContext(AuthContext)
-    if (loading) {
-      return <div>Loading</div>
+  const { authenticated, loading } = React.useContext(AuthContext);
+  const [isLoginModalOpen, setLoginIsModalOpen] = useState(false);
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+
+  React.useEffect(() => {
+    if (!loading && !authenticated) {
+      setLoginIsModalOpen(true);
     }
-    return authenticated ? children : <Navigate to="/login" replace />
+  }, [loading, authenticated]);
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
+
+  return (
+    <>
+      {authenticated ? children : null}
+
+      {
+        isLoginModalOpen && <LoginModal closeLogin={setLoginIsModalOpen} open={isLoginModalOpen} openRegister={() => {
+         setLoginIsModalOpen(false);
+         setIsSignUpModalOpen(true);
+        }} />
+      }
+      
+      {
+        isSignUpModalOpen && (<Register  closeSignUp={setIsSignUpModalOpen}  open={isSignUpModalOpen} openLogin={() => {
+        setLoginIsModalOpen(true);
+        setIsSignUpModalOpen(false);
+       }}/>)
+      }
+    </>
+  );
+};
+
 
   console.log(import.meta.env.VITE_BASE_URL);
 
@@ -89,8 +119,8 @@ const App = () => {
             <Route path='/' element={<HomePage />} />
             <Route path='/about' element={<About />} />
             <Route path='/planspricing' element={<PlansPricing />} />
-            <Route path='/login' element={<LoginModal />} />
-            <Route path='/register' element={<Register />} />
+            {/* <Route path='/login' element={<LoginModal />} /> */}
+            {/* <Route path='/register' element={<Register />} /> */}
           </Route>
           <Route element={<PrivateRouter><AuthLayout /></PrivateRouter>}>
             <Route path='/createresume' element={<CreateResume />} />
@@ -100,6 +130,7 @@ const App = () => {
             <Route path='/register' element={<Register />} />
           </Route>
           <Route path='/resumecontent' element={<ResumeContentNav />} />
+          <Route path='*' element={<Typography variant="h1">404</Typography>} />
 
           {/* 
         <Route element={<DashLayout />}>
