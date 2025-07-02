@@ -273,7 +273,6 @@ const TabPanel = styled(BaseTabPanel) `
   padding-right: 72px;
   padding-top: 48px;
   padding-bottom: 80px;
-  opacity: 0.6;
   `
 ;
 
