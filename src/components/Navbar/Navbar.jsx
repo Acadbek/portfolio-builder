@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import styles from './Navbar.module.scss'
 import classNames from 'classnames/bind'
 import { Box, Container } from '@mui/material'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import logo from './../../assets/icon/logoIcom.svg'
 import { CurrentButton } from '../Button/Button'
 import { AuthContext } from '../../context/AuthContext'
+import { LoginModal } from '../Login'
+import { Register } from '../Register'
 
 const cn = classNames.bind(styles)
 
@@ -27,7 +29,15 @@ export const Navbar = ({ variant, className }) => {
 
   // Auntifikatsiyani tekshirish token bosa login btn , start now btn ozgaradi
   const {authenticated} = React.useContext(AuthContext)
-  
+  const [isLoginModalOpen, setLoginIsModalOpen] = useState(false);
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+
+  const handleClick = () => {
+    if (!authenticated) {
+      setLoginIsModalOpen(true);
+    }
+  };
+
   return (
     <Box className={cn("navbar", { fixed: isFixed })}>
       <Container disableGutters
@@ -50,12 +60,25 @@ export const Navbar = ({ variant, className }) => {
             </li>
           </ul>
           <Box className={cn('btnCard')}>
-            <NavLink to={!authenticated ? "/login" : "/"}>
-              <CurrentButton variant="outlined" className={cn('btnOne')} title={"Login"}></CurrentButton>
-            </NavLink>
-            <NavLink to={!authenticated ? "/register" : "/createresume"}>
-              <CurrentButton variant="contained" className={cn('btnTwo')} title={"Start Now"}></CurrentButton>
-            </NavLink>
+            {!authenticated &&
+              <CurrentButton onClick={handleClick} variant="outlined" className={cn('btnOne')} title={"Login"}></CurrentButton>
+            }
+            <Link to={`${authenticated ? "/createresume" : ""}`}>
+              <CurrentButton onClick={handleClick}  variant="contained" className={cn('btnTwo')} title={"Start Now"}></CurrentButton>
+            </Link>
+            {
+              isLoginModalOpen && <LoginModal closeLogin={setLoginIsModalOpen} open={isLoginModalOpen} openRegister={() => {
+              setLoginIsModalOpen(false);
+              setIsSignUpModalOpen(true);
+            }} />
+            }
+
+            {
+              isSignUpModalOpen && (<Register  closeSignUp={setIsSignUpModalOpen}  open={isSignUpModalOpen} openLogin={() => {
+              setLoginIsModalOpen(true);
+              setIsSignUpModalOpen(false);
+            }}/>)
+            }
           </Box>
         </Box>
       </Container>

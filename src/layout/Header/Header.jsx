@@ -1,14 +1,27 @@
 import { Avatar, AvatarGroup, Box, Card, Container, Rating, Typography } from '@mui/material'
 import classNames from 'classnames/bind'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Header.module.scss'
 import { CurrentButton } from '../../components/Button/Button'
 import { HerrovIcon } from '../../assets/icon/arrovIcon'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import tictok from '../../assets/icon/tictok.svg'
+import { LoginModal } from '../../components/Login'
+import { AuthContext } from '../../context/AuthContext'
+import { Register } from '../../components/Register'
 const cn = classNames.bind(styles)
 
 export const Header = ({ title, starIcon }) => {
+  const {authenticated} = React.useContext(AuthContext)
+  const [isLoginModalOpen, setLoginIsModalOpen] = useState(false);
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+  
+    const handleClick = () => {
+      if (!authenticated) {
+        setLoginIsModalOpen(true);
+      }
+    };
+
   return (
     <Container disableGutters
     maxWidth="xl"
@@ -23,9 +36,22 @@ export const Header = ({ title, starIcon }) => {
         <Typography className={cn("title")} >Build a job-winning <br /> resume for free</Typography>
         <Typography className={cn("p")} >Your first resume is 100% free, including all <br /> design features & unlimited downloads. <br />
           Yes, really 🚀</Typography>
-        <NavLink to={'createresume'}>
-          <CurrentButton className={cn("getBtn")} starIcon={<HerrovIcon className={cn("heroIcon")} />} title={"Get started – it's free ✨"}></CurrentButton>
-        </NavLink>
+        <Link  to={`${authenticated ? '/createresume' : ''}`}>
+          <CurrentButton onClick={handleClick} className={cn("getBtn")} starIcon={<HerrovIcon className={cn("heroIcon")} />} title={"Get started – it's free ✨"}></CurrentButton>
+        </Link>
+        {
+          isLoginModalOpen && <LoginModal closeLogin={setLoginIsModalOpen} open={isLoginModalOpen} openRegister={() => {
+          setLoginIsModalOpen(false);
+          setIsSignUpModalOpen(true);
+          }} />
+          }
+        
+          {
+            isSignUpModalOpen && (<Register  closeSignUp={setIsSignUpModalOpen}  open={isSignUpModalOpen} openLogin={() => {
+            setLoginIsModalOpen(true);
+            setIsSignUpModalOpen(false);
+          }}/>)
+        }
         <Box className={cn("boxBottom")}>
           <AvatarGroup max={4}>
             <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />

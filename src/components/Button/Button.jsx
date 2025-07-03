@@ -1,9 +1,9 @@
 import { Button } from '@mui/material'
 import React from 'react'
 
-export const CurrentButton = ({ starIcon, onclick, color, variant, className, title }) => {
+export const CurrentButton = ({ starIcon, onClick, color, variant, className, title }) => {
     return (
-        <Button onClick={onclick} startIcon={starIcon} className={className} color={color} variant={variant}  >
+        <Button onClick={onClick} startIcon={starIcon} className={className} color={color} variant={variant}  >
             {title}
         </Button>
     )
